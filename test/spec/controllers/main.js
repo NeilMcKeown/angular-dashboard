@@ -20,4 +20,9 @@ describe('Controller: MainCtrl', function () {
   it('should attach a list of awesomeThings to the scope', function () {
     expect(MainCtrl.awesomeThings.length).toBe(3);
   });
+
+  it ('should pass a basic test', function () {
+      expect(2 > 1);
+  });
+
 });

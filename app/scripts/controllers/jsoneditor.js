@@ -10,10 +10,10 @@
  * Controller of the angularAssetApp
  */
 angular.module('angularAssetApp')
-  .controller('JSONEditorCtrl', ['$scope','$http', function($scope,$http) {
+  .controller('JSONEditorCtrl', ['$scope','$http', function() {
 
     console.log('JSONEditorCtrl initiated.');
-    
+
     // Configure the UI settings for the editor.
     JSONEditor.defaults.options.theme = 'bootstrap3';
     JSONEditor.defaults.options.iconlib = "bootstrap3";

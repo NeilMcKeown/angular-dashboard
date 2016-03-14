@@ -15,9 +15,9 @@ angular.module('angularAssetApp')
       'Karma'
     ];
 
-    toastr.success('Have fun storming the castle!', 'Miracle Max Says');
+    //toastr.success('Have fun storming the castle!', 'Miracle Max Says');
 
-    toastr.info("You killed my father, prepare to die.", "Inigo Montoya Says");
+    //toastr.info("You killed my father, prepare to die.", "Inigo Montoya Says");
 
-    toastr.error("I don't think that means what you think it means.", "Fezzik Says");
+    //toastr.error("I don't think that means what you think it means.", "Fezzik Says");
   });
