@@ -209,6 +209,8 @@ body {
 .sidebar ul li a {
     /*border-bottom: 1px solid #e7e7e7;*/
     color: #A7B1C2;
+    min-height: 50px;
+    padding: 15px 15px;
 }
 
 .sidebar ul li a.active {
