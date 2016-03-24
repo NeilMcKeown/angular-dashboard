@@ -13,7 +13,6 @@ var express = require('express');
 var cfenv = require('cfenv');
 
 // gzip/deflate outgoing responses
-var connect = require('connect');
 var compression = require('compression');
 
 // create a new express server
