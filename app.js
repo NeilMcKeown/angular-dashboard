@@ -12,8 +12,14 @@ var express = require('express');
 // for more info, see: https://www.npmjs.com/package/cfenv
 var cfenv = require('cfenv');
 
+// gzip/deflate outgoing responses
+var compress = require('compression');
+
 // create a new express server
 var app = express();
+
+// gzip outgoing traffic.
+app.use(compression());
 
 // serve the files out of ./dist as our main files
 app.use(express.static(__dirname + '/dist'));
