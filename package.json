@@ -43,9 +43,10 @@
     "time-grunt": "^1.0.0"
   },
   "dependencies": {
+    "cfenv": "1.0.x",
+    "cloudant": "^1.4.1",
     "compression": "^1.6.1",
-    "express": "4.13.x",
-    "cfenv": "1.0.x"
+    "express": "4.13.x"
   },
   "repository": {},
   "engines": {

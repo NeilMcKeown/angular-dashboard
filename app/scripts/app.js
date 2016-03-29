@@ -70,6 +70,13 @@ angular
         controllerAs: 'bingmaps'
       })
 
+      // DATABASE CONNECTIVITY
+      .when('/cloudant', {
+        templateUrl: 'views/cloudant.html',
+        controller: 'CloudantCtrl',
+        controllerAs: 'cloudant'
+      })
+
       // TABLES
       .when('/tables', {
         templateUrl: 'views/tables.html'
