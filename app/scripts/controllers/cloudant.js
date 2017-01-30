@@ -11,10 +11,7 @@ angular.module('angularAssetApp')
   .controller('CloudantCtrl', function ($http, $scope) {
     console.log('CloudantCtrl initialised.');
 
-    //Enable cross domain calls
-    //$httpProvider.defaults.useXDomain = true;
-
-    // Consume a RESTful API and assign the response to a value.
+    // Consume a public RESTful API and assign the response to a value.
     $http.get('https://b4094eb7-53fa-4346-996d-13ef28cca6db-bluemix.cloudant.com/customers/_all_docs?include_docs=true').
         success(function(data) {
             console.log('rest api call successful.');

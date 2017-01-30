@@ -10,7 +10,7 @@
  * Controller of the angularAssetApp
  */
 angular.module('angularAssetApp')
-  .controller('JSONEditorCtrl', ['$scope','$http', function() {
+  .controller('JSONEditorCtrl', ['$scope','$http', function($scope,$http) {
 
     console.log('JSONEditorCtrl initiated.');
 
@@ -23,109 +23,109 @@ angular.module('angularAssetApp')
     // Initialize the editor with a JSON schema
     var editor = new JSONEditor(document.getElementById('editor_holder'),{
       // Enable fetching schemas via ajax
-      ajax: true,
+      //ajax: true,
 
       show_errors: true,
 
-      schema: {
-        $schema: "http://json-schema.org/draft-04/schema#",
-        "id": "http://jsonschema.net",
-        "type": "object",
-        "title": "User Details",
-        "properties": {
-          "id": {
-            "id": "http://jsonschema.net/id",
-            "type": "integer",
-            "minimum": 0,
-            "exclusiveMinimum": true  // Required for mandatory integers.
-          },
-          "Name": {
-            "type": "string",
-            "minLength": 4
-          },
-          "Username": {
-            "id": "http://jsonschema.net/username",
-            "type": "string",
-            "minLength": 4
-          },
-          "Email": {
-            "id": "http://jsonschema.net/email",
-            "type": "string",
-            "minLength": 1
-          },
-          "Address": {
-            "id": "http://jsonschema.net/address",
-            "type": "object",
-            "properties": {
-              "Street": {
-                "id": "http://jsonschema.net/address/street",
-                "type": "string",
-                "minLength": 1
-              },
-              "Suit": {
-                "id": "http://jsonschema.net/address/suite",
-                "type": "string"
-              },
-              "City": {
-                "id": "http://jsonschema.net/address/city",
-                "type": "string",
-                "minLength": 1
-              },
-              "zipcode": {
-                "id": "http://jsonschema.net/address/zipcode",
-                "type": "string"
-              },
-              "Geo": {
-                "id": "http://jsonschema.net/address/geo",
-                "type": "object",
-                "properties": {
-                  "Latitude": {
-                    "id": "http://jsonschema.net/address/geo/lat",
-                    "type": "string"
-                  },
-                  "Longitude": {
-                    "id": "http://jsonschema.net/address/geo/lng",
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          },
-          "Phone": {
-            "id": "http://jsonschema.net/phone",
-            "type": "string"
-          },
-          "Website": {
-            "id": "http://jsonschema.net/website",
-            "type": "string"
-          },
-          "Company": {
-            "id": "http://jsonschema.net/company",
-            "type": "object",
-            "properties": {
-              "Name": {
-                "id": "http://jsonschema.net/company/name",
-                "type": "string",
-                "minLength": 1
-              },
-              "CatchPhrase": {
-                "id": "http://jsonschema.net/company/catchPhrase",
-                "type": "string"
-              }
-            }
-          }
-        },
-        "required": [
-          "id",
-          "Name",
-          "Username",
-          "Email",
-          "Address",
-          "Phone",
-          //"website",
-          "Company"
-        ]
-      },
+      // schema: {
+      //   $schema: "http://json-schema.org/draft-04/schema#",
+      //   "id": "http://jsonschema.net",
+      //   "type": "object",
+      //   "title": "User Details",
+      //   "properties": {
+      //     "id": {
+      //       "id": "http://jsonschema.net/id",
+      //       "type": "integer",
+      //       "minimum": 0,
+      //       "exclusiveMinimum": true  // Required for mandatory integers.
+      //     },
+      //     "Name": {
+      //       "type": "string",
+      //       "minLength": 4
+      //     },
+      //     "Username": {
+      //       "id": "http://jsonschema.net/username",
+      //       "type": "string",
+      //       "minLength": 4
+      //     },
+      //     "Email": {
+      //       "id": "http://jsonschema.net/email",
+      //       "type": "string",
+      //       "minLength": 1
+      //     },
+      //     "Address": {
+      //       "id": "http://jsonschema.net/address",
+      //       "type": "object",
+      //       "properties": {
+      //         "Street": {
+      //           "id": "http://jsonschema.net/address/street",
+      //           "type": "string",
+      //           "minLength": 1
+      //         },
+      //         "Suit": {
+      //           "id": "http://jsonschema.net/address/suite",
+      //           "type": "string"
+      //         },
+      //         "City": {
+      //           "id": "http://jsonschema.net/address/city",
+      //           "type": "string",
+      //           "minLength": 1
+      //         },
+      //         "zipcode": {
+      //           "id": "http://jsonschema.net/address/zipcode",
+      //           "type": "string"
+      //         },
+      //         "Geo": {
+      //           "id": "http://jsonschema.net/address/geo",
+      //           "type": "object",
+      //           "properties": {
+      //             "Latitude": {
+      //               "id": "http://jsonschema.net/address/geo/lat",
+      //               "type": "string"
+      //             },
+      //             "Longitude": {
+      //               "id": "http://jsonschema.net/address/geo/lng",
+      //               "type": "string"
+      //             }
+      //           }
+      //         }
+      //       }
+      //     },
+      //     "Phone": {
+      //       "id": "http://jsonschema.net/phone",
+      //       "type": "string"
+      //     },
+      //     "Website": {
+      //       "id": "http://jsonschema.net/website",
+      //       "type": "string"
+      //     },
+      //     "Company": {
+      //       "id": "http://jsonschema.net/company",
+      //       "type": "object",
+      //       "properties": {
+      //         "Name": {
+      //           "id": "http://jsonschema.net/company/name",
+      //           "type": "string",
+      //           "minLength": 1
+      //         },
+      //         "CatchPhrase": {
+      //           "id": "http://jsonschema.net/company/catchPhrase",
+      //           "type": "string"
+      //         }
+      //       }
+      //     }
+      //   },
+      //   "required": [
+      //     "id",
+      //     "Name",
+      //     "Username",
+      //     "Email",
+      //     "Address",
+      //     "Phone",
+      //     //"website",
+      //     "Company"
+      //   ]
+      // },
 
       // Disable additional properties
       no_additional_properties: false,
@@ -145,6 +145,19 @@ angular.module('angularAssetApp')
     //        // Populate the editor with the JSON we got.
     //        editor.setValue(data);
     //    });
+
+
+    // Consume a RESTful API and assign the response to a value.
+    $http.get('https://b4094eb7-53fa-4346-996d-13ef28cca6db-bluemix.cloudant.com/customers/_all_docs?include_docs=true').
+        success(function(data) {
+            console.log('rest api call successful.');
+            $scope.user = data;
+
+            jsonLoaded = true;
+
+            // Populate the editor with the JSON we got.
+            editor.setValue(data);
+        });
 
     // When we load our external RESTful API call, validate it.
     //editor.on('ready',function() {
